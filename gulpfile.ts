@@ -16,6 +16,7 @@ gulp.task('build.dev', (done: any) =>
   runSequence(//'clean.dev',
               'tslint',
               // 'css-lint',
+              'build.fonts',
               'build.assets.dev',
               'build.html_css',
               'build.js.dev',
@@ -45,6 +46,7 @@ gulp.task('build.prod', (done: any) =>
   runSequence('clean.prod',
               'tslint',
               // 'css-lint',
+              'build.fonts',
               'build.assets.prod',
               'build.html_css',
               'copy.prod',
@@ -77,6 +79,7 @@ gulp.task('build.prod.exp', (done: any) =>
 gulp.task('build.test', (done: any) =>
   runSequence('clean.once',
               'tslint',
+              'build.fonts',
               'build.assets.dev',
               'build.html_css',
               'build.js.dev',
