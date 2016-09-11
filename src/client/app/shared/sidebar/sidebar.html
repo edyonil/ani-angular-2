@@ -1,49 +1,45 @@
-<button class="btn btn-default" id="toggle-sidebar" type="button" (click)="eventCalled()">
-    &#9776;
-</button>
-<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
-    <ul class="list-group">
-        <a [routerLink]="['home']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-dashboard"></i> Dashboard
-        </a>
-        <a [routerLink]="['chart']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-bar-chart-o"></i> Charts
-        </a>
-        <a [routerLink]="['tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-table"></i> Tables
-        </a>
-        <a [routerLink]="['forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-edit"></i> Forms
-        </a>
-        <a [routerLink]="['element']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-desktop"></i> Bootstrap Elements
-        </a>
-        <a [routerLink]="['grid']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-wrench"></i> Bootstrap Grid
-        </a>
-        <a [routerLink]="['components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-th-list"></i> &nbsp;Component
-        </a>
-        <div class="nested-menu">
-            <a class="list-group-item" (click)="addExpandClass('pages')">
-                <span><i class="fa fa-plus"></i> &nbsp; Menu</span>
-            </a>
-            <li class="nested" [ngClass]="{'expand' : showMenu === 'pages' }">
-                <ul class="submenu">
-                    <li>
-                        <a href><span>Submenu</span></a>
-                    </li>
-                    <li>
-                        <a href><span>Submenu</span></a>
-                    </li>
-                </ul>
-            </li>
+<aside id="sidebar">
+    <div class="sidenav-outer">
+        <div class="menu-body">
+            <ul class="nav nav-pills nav-stacked sidenav">
+                <li>
+                    <a [routerLink]="['home']" class="website-name">
+                        Ani Theme
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['home']" class="logo">
+                        <img src="assets/images/flat-avatar.png" class="user-avatar" />
+                        <p class="text-xs-center">Ani pascal</p>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['home']">
+                        <i class="fa fa-home"></i>
+                        <span>&nbsp; Home</span>
+                    </a>
+                </li>
+                <li class="nested" [ngClass]="{'expand' : showMenu === 'pages' }">
+                    <a (click)="addExpandClass('pages')"><i class="fa fa-chevron-circle-down"></i><span>&nbsp;&nbsp; Pages</span></a>
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['components']"><span>Components</span></a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['blankpage']"><span>Blank Page</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li> 
+                    <a href='http://www.strapui.com/themes/ani-angular-2-bootstrap-4-theme/'>
+                        <i class="fa fa-shopping-cart"></i>
+                        <span>&nbsp; Ani Premium Theme</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['']"><i class="fa fa-sign-out"></i><span>&nbsp;&nbsp; Logout</span></a>
+                </li>
+            </ul>
         </div>
-        <a [routerLink]="['blankpage']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-file-o"></i> &nbsp;BlankPage
-        </a>
-        <a class="list-group-item more-themes" href="http://www.strapui.com/" >
-            More Themes
-        </a>
-    </ul>
-</nav>
+    </div>
+</aside>

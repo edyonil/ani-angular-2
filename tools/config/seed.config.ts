@@ -77,7 +77,7 @@ export class SeedConfig {
    * which can be overriden by the `--base` flag when running `npm start`.
    * @type {string}
    */
-  APP_BASE = argv['base'] || '/';
+  APP_BASE = argv['base'] || '/start-angular/ani-angular-2/master/dist/prod/';
 
   /**
    * The base path of node modules.
