@@ -2,6 +2,7 @@
   "name": "Ani-Angular2",
   "version": "0.0.0",
   "description": "Seed for Angular 2 app",
+  "description": "Seed for Angular 2 apps",
   "repository": {
     "url": "https://strapui.com"
   },
@@ -126,7 +127,8 @@
     "core-js": "^2.4.0",
     "es6-module-loader": "^0.17.8",
     "font-awesome": "4.6.3",
-    "jquery": "^3.1.0",
+    "highcharts": "4.2.5",
+    "jquery": "3.0.0",
     "moment": "^2.14.1",
     "ng2-bootstrap": "^1.1.1",
     "reflect-metadata": "^0.1.8",

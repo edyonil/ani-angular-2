@@ -9,6 +9,7 @@ import { join } from 'path';
 import {
   APP_DEST,
   APP_SRC,
+  ASSETS_SRC,
   BROWSER_LIST,
   CSS_DEST,
   CSS_SRC,
@@ -72,6 +73,15 @@ function processComponentScss() {
     .on('error', reportPostCssError)
     .pipe(plugins.sourcemaps.write(isProd ? '.' : ''))
     .pipe(gulp.dest(isProd ? TMP_DIR : APP_DEST));
+}
+
+/**
+* Process all theme color scss files
+*/
+function processThemeScss() {
+  return gulp.src(join(ASSETS_SRC+'/theme/', '**', '*.scss'))
+    .pipe(plugins.sass({includePaths: ['./node_modules/']}).on('error', plugins.sass.logError))
+    .pipe(gulp.dest(APP_DEST+'/themes/'));
 }
 
 /**
@@ -158,4 +168,4 @@ function processExternalCss() {
 /**
  * Executes the build process, processing the HTML and CSS files.
  */
-export = () => merge(processComponentStylesheets(), prepareTemplates(), processExternalStylesheets());
+export = () => merge(processComponentStylesheets(), prepareTemplates(), processExternalStylesheets(), processThemeScss());
